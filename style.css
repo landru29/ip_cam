@@ -1,0 +1,34 @@
+img.thumb {
+    width: 200px;
+}
+
+ul.views {
+    list-style: none;
+    padding: 0;
+}
+
+ul.views>li {
+    display: inline-block;
+    padding: 5px;
+    margin: 2px;
+    border: solid 1px #888;
+    cursor: pointer;
+}
+
+ul.views>li:hover,ul.views>li.active {
+    border: solid 2px #448844;
+    padding: 4px;
+    background-color: #aaffaa;
+}
+
+ul.views>li>div {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}

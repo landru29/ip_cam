@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cam</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div data-ng-app="App" data-ng-controller="MainCtrl as Ctrl">
+         <h1>Cam {{(Ctrl.current.date || Ctrl.currentDate) | date:'yyyy-MM-dd HH:mm:ss Z'}}</h1>
+         <div class="center">
+             <img data-ng-if="Ctrl.current" data-ng-src="{{Ctrl.current.filename}}" data-ng-click="Ctrl.resetActive()"">
+         </div>
+         <ul class="views">
+             <li data-ng-repeat="file in Ctrl.files track by file.filename" data-ng-click="Ctrl.makeActive(file)" data-ng-class="{active: file.active}">
+                 <img class="thumb" data-ng-src="{{file.filename}}">
+                 <div data-ng-bind="file.date | date:'yyyy-MM-dd HH:mm:ss Z'"></div>
+             </li>
+         </ul>
+    </div>
+  </body>
+</html>
